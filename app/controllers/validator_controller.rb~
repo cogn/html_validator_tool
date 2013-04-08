@@ -1,0 +1,12 @@
+class ValidatorController < ApplicationController
+
+  def index
+  end
+
+  def validate
+  end
+
+  def show
+  end
+
+end
