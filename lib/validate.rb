@@ -10,15 +10,19 @@ def validate_helper(url, type)
 
 	#Complete validation data
 	#~ system "mkdir public/complete_validate/validate_#{$i}.html"
-	aFile = File.new("validate_#{$i}.html", "w")
+	path = "#{Rails.root}/public/validation_template/"
+	file_name = "validate_#{$i}.html"
+	aFile = File.new(path + file_name, "w")
 	body_content = body_content.encode('utf-8', :invalid => :replace, :undef => :replace, :replace => '_')
 	aFile.write(body_content)
 	aFile.close
-
+  page = Nokogiri::HTML(open(path + file_name))  
 	#Tidy data
 	#~ system "mkdir public/complete_validate/validate_#{$i}.html"
-	bFile = File.new("tidy_#{$i}.html", "w")
-	page = Nokogiri::HTML(open("validate_#{$i}.html"))  
+	
+	file_name = "tidy_#{$i}.html"
+	bFile = File.new(path + file_name, "w")
+	
 	bFile.write(page.css('div#tidy')[0])
 	bFile.close
 	headers=response.to_hash
