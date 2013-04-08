@@ -10,7 +10,7 @@ def validate_helper(url, type)
 
 	#Complete validation data
 	#~ system "mkdir public/complete_validate/validate_#{$i}.html"
-	aFile = File.open("validate_#{$i}.html", "w")
+	aFile = File.new("validate_#{$i}.html", "w")
 	body_content = body_content.encode('utf-8', :invalid => :replace, :undef => :replace, :replace => '_')
 	aFile.write(body_content)
 	aFile.close
