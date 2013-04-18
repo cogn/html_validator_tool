@@ -1,2 +1,27 @@
-<h1>Validator#index</h1>
-<p>Find me in app/views/validator/index.html.erb</p>
+
+
+     <div id="fields">
+            <fieldset style="display: block; visibility: visible; opacity: 1;" id="validate-by-uri" class="tabset_content front">
+               <legend class="tabset_label">Validate by URI</legend>
+                 <%= form_tag '/validator/validate',:id =>"validate_url" do %>
+                  <p class="instructions">
+                     URL should be in the form for an ex : "www.cognizant.com"
+                  </p>
+                  <p>
+                     <label title="Address of page to Validate" for="uri">Address:</label>
+                     <!--<input value="" name="uri" id="uri" size="45" type="text" style = "background: url('textbg.png') no-repeat scroll left top rgb(254, 254, 254);">-->
+			<%= text_field_tag 'uri','', :size=>"45", :style=>  "background: url('textbg.png') no-repeat scroll left top rgb(254, 254, 254);"%>
+                     </br></br>
+                     <input id="direct-st" name="st" value="1" type="checkbox"  checked="checked">
+                     <label for="direct-st">Clean up Markup with HTML-Tidy</label>
+                  </p>
+                  </br>
+                  <p class="submit_button">
+                   <!--  <input title="Submit for validation" value="Check" type="submit" class="submit">-->
+		     <%= submit_tag "Check",:class=>"submit"%>
+                  </p>
+               <% end %>
+
+            </fieldset>
+         </div>
+         <!-- fields -->
