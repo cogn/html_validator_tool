@@ -4,10 +4,14 @@ gem 'rails', '3.1.0'
 
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
-gem 'pg'
+gem 'mysql2'
+#gem 'pg'
 #gem 'sqlite3'
 gem 'therubyracer'
 gem 'nokogiri'
+#gem 'plupload-rails3'
+#gem 'net/http'
+gem 'multipart-post'
 
 # Gems used only for assets and not required
 # in production environments by default.

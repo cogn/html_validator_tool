@@ -1,4 +1,18 @@
-<%for i in 0...$i%>
-<%=link_to "Download_#{i}",:action=>:download,:id=>i%>
-<%end%>
-
+<div id="fields">
+               <table id="table-3">
+                  <thead>
+                     <th><strong>URL/File Name</strong></th>
+                     <th><strong>Error(s)/Warnings(s)</strong></th>
+                     <th><strong>Show Tidy</strong></th>                     
+                  </thead>
+                  <tbody>
+                   <%@files && @files.each do |url|%>
+                   <tr>
+                      <td><%=url.file_name%></td>
+                      <td><%=url.errors_w3c%></td>
+                      <td><%=link_to "Show Tidy",:action=>:download,:id=>url.id if !url.errors_w3c.eql?("Please Try Again Later")%></td>
+                      <tr>
+                  <%end%>             
+                  </tbody>
+               </table>
+</div>

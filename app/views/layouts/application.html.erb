@@ -1,14 +1,34 @@
+
+
 <!DOCTYPE html>
 <html>
-<head>
-  <title>HtmlValidator</title>
-  <%= stylesheet_link_tag    "application" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-
-<%= yield %>
-
-</body>
+    <!-- header -->
+   <head>
+      <title>HTML Validation Service</title>
+      <%= stylesheet_link_tag "style.css" %>  
+      <%= javascript_include_tag "application.js" %>  
+   </head>
+   <!-- header -->
+   <body>
+      <div id="banner">
+         <h1 id="title">
+            <!--<img alt="W3C" id="logo" src="/images/cognizant.jpg" height="61" width="110" style ="margin-top:10px;margin-left:10px;"> -->
+	    <%= image_tag("cognizant.jpg", :height=>"61",  :width=>"110", :style =>"margin-top:10px;margin-left:10px;")%>
+            <span>Markup Validation Service</span>
+         </h1>
+         <p id="tagline" style = "padding-left:10px;">Check the markup (HTML) of Web documents</p>
+      </div>
+      <div id="frontforms">
+         <ul id="tabset_tabs">
+            <li class=<%=(params[:action].eql?("index") ? "selected" : "")%>><a href="/validator/index"><span>Validate by</span> URI</a></li>
+            <li class=<%=(params[:action].eql?("validate_files") ? "selected": "")%>><a href="/validator/validate_files"><span>Validate by</span> File Upload</a></li>
+            <!-- <li class="selected"><a href="#validate_by_uri"><span>Validate by</span> URI</a></li> -->
+         </ul>
+    <%=yield%>
+      </div>
+      <!-- frontforms -->
+      <!-- footer -->
+      <div id="footer">		</div>
+      <!-- footer -->
+   </body>
 </html>

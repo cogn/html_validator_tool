@@ -1,0 +1,31 @@
+     <div id="fields">
+            <fieldset style="display: block; visibility: visible; opacity: 1;" id="validate-by-uri" class="tabset_content front">
+               <legend class="tabset_label">Validate by File</legend>
+                <%= form_for :files, :url => { :action => "get_urls" },:html=>{:id =>"validate_file",:multipart => true} do |f| %>
+                  <p class="instructions">
+                     File format should be html/htm
+                  </p>
+                  <p>
+                     <label title="Address of page to Validate" for="uri">Address:</label>
+                     <!--<input value="" name="uri" id="uri" size="45" type="text" style = "background: url('textbg.png') no-repeat scroll left top rgb(254, 254, 254);">-->
+			<%#= text_field_tag 'uri','', :size=>"45", :style=>  "background: url('textbg.png') no-repeat scroll left top rgb(254, 254, 254);"%>
+			  <%= f.file_field :attachment, :multiple => true, :size=>"45", :style=>  "background: url('textbg.png') no-repeat scroll left top rgb(254, 254, 254);" %>
+                     </br></br>
+			     <p>
+		<strong>Files You Selected:</strong>
+	</p>
+	<ul id="fileList"><li>No Files Selected</li></ul>
+	<br/><br/>
+                     <input id="direct-st" name="st" value="1" type="checkbox"  checked="checked">
+                     <label for="direct-st">Clean up Markup with HTML-Tidy</label>
+                  </p>
+                  </br>
+                  <p class="submit_button">
+                   <!--  <input title="Submit for validation" value="Check" type="submit" class="submit">-->
+		     <%= submit_tag "Check",:class=>"submit"%>
+                  </p>
+               <% end %>
+
+            </fieldset>
+         </div>
+

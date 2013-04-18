@@ -1,0 +1,14 @@
+development:
+  w3c_url: "http://validator.w3.org/check"
+  parameter_tidy: "st"
+  uploaded_file : "uploaded_file"
+
+test:
+  w3c_url: "http://validator.w3.org/check"
+  parameter_tidy: "st"
+  uploaded_file : "uploaded_file"
+
+production:
+  w3c_url: "http://validator.w3.org/check"
+  parameter_tidy: "st"
+  uploaded_file : "uploaded_file"

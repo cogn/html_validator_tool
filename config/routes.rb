@@ -1,9 +1,12 @@
 HtmlValidator::Application.routes.draw do
   match "validator/index" => "validator#index"
-  match "validator/validate" => "validator#validate"
+  match "validator/validate" => "validator#validate_urls"
+  match "validator/validate_files" => "validator#validate_files"
+  match "validator/get_urls" => "validator#get_urls"
   match "validator/show" => "validator#show"
   match "validator/download/:id" => "validator#download"
 
+match 'validator/get_urls', :controller=>'validator', :action=>'_plupload_uploader', :as=>'pluploader'
   #~ get "validator/validate"
 
   #~ get "validator/show"
