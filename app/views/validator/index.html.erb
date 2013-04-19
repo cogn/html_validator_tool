@@ -3,7 +3,7 @@
                <legend class="tabset_label">Validate by URI</legend>
                  <%= form_tag '/validator/validate',:id =>"validate_url" do %>
                   <p class="instructions">
-                     URL should be in the form for an ex : "www.cognizant.com"
+                    Input format : "www.cognizant.com"
                   </p>
                   <p>
                      <label title="Address of page to Validate" for="uri">Address:<font size="2" color="red">*</font></label>
@@ -11,7 +11,7 @@
 			<%= text_field_tag 'uri','', :size=>"45", :style=>  "background: url('textbg.png') no-repeat scroll left top rgb(254, 254, 254);"%><br/>
 			<span class="note" style="padding-left:85px;">*Input url's separated by commas(,)</span>
                      </br></br>
-                     <input id="direct-st" name="st" value="1" type="checkbox"  checked="checked">
+                     <input id="direct-st" name="st" value="1" type="checkbox"  checked="checked" disabled="true">
                      <label for="direct-st">Clean up Markup with HTML-Tidy</label>
                   </p>
                   </br>
