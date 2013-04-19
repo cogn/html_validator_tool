@@ -6,16 +6,17 @@
                      File format should be html/htm
                   </p>
                   <p>
-                     <label title="Address of page to Validate" for="uri">Files:</label>
+                     <label title="Address of page to Validate" for="uri">Files: <font size="2" color="red">*</font></label>
                      <!--<input value="" name="uri" id="uri" size="45" type="text" style = "background: url('textbg.png') no-repeat scroll left top rgb(254, 254, 254);">-->
 			<%#= text_field_tag 'uri','', :size=>"45", :style=>  "background: url('textbg.png') no-repeat scroll left top rgb(254, 254, 254);"%>
 			  <%= f.file_field :attachment, :multiple => true, :size=>"45", :style=>  "background: url('textbg.png') no-repeat scroll left top rgb(254, 254, 254);" %>
+			  <span class="note">*To select multiple files, press and hold down CTRL, and then click each item. </span>
                      </br></br>
 			     <p>
-		<strong>Files You Selected:</strong>
+		<strong>Files You Selected:</strong><br/><br/>
 	</p>
-	<ul id="fileList"><li>No Files Selected</li></ul>
-	<br/><br/>
+	<ul id="fileList" class="blinkselect"><li class="blinkselect">No Files Selected</li></ul>
+	<br/><br/><br/>
                      <input id="direct-st" name="st" value="1" type="checkbox"  checked="checked">
                      <label for="direct-st">Clean up Markup with HTML-Tidy</label>
                   </p>

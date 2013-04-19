@@ -51,13 +51,17 @@ console.log(input)
 			for (var i = 0; i < input.files.length; i++) {
 				var li = document.createElement("li");
 				li.innerHTML = input.files[i].name;
+				li.className = 'blink';
 				ul.appendChild(li);
 			}
 			if(!ul.hasChildNodes()) {
 				var li = document.createElement("li");
 				li.innerHTML = 'No Files Selected';
+				li.className = 'blinkselect';
 				ul.appendChild(li);
 			}
+			$("#fileList").animate({width: "70%",opacity: 1.5,marginLeft: "0.6in",fontSize: "3em",borderWidth: "10px"}, 1500 );
+			
 });
 
 $("#validate_file").submit(function(e){

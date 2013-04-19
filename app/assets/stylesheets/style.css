@@ -97,4 +97,26 @@ font-size: 12px;
 padding: 4px 7px 2px;
 vertical-align: top;
 }
+
+.blink {
+background-color:#EAEBEE!important;
+padding-top:10px!important;
+padding-bottom:10px!important;
+font-style: italic!important;
+color: #4D525E!important;
+font-size: 1.0em!important;
+}
+.blinkselect {
+background-color:#EAEBEE!important;
+padding-top:5px!important;
+padding-bottom:5px!important;
+font-style: italic!important;
+color: #4D525E!important;
+font-size: 1.0em!important;
+}
+
+.note {
+	color: #4D525E;
+    font-size: 0.8em;
+}
                   
