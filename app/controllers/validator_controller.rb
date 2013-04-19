@@ -32,6 +32,12 @@ def download
 	send_file "#{Rails.root}/public/validation_template/#{file_record.tidy_path}"
 end
 
+def download_validation
+	file_record = UploadFolder.find(params[:id])
+	send_file "#{Rails.root}/public/validation_template/#{file_record.url}"
+end
+
+
 end
 
 
