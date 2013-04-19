@@ -43,7 +43,7 @@ $(document).ready(function(){
     
 $('#files_attachment').change(function (e) {
 var input = document.getElementById("files_attachment");
-console.log(input)
+	$("#fileList").removeAttr("style")
 			var ul = document.getElementById("fileList");
 			while (ul.hasChildNodes()) {
 				ul.removeChild(ul.firstChild);
