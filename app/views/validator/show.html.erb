@@ -9,7 +9,7 @@
                    <%@files && @files.each do |url|%>
                    <tr>
                       <td><%=url.file_name%></td>
-                      <td><%=url.errors_w3c%></td>
+                      <td><%=url.errors_w3c%> <%=link_to "Download",:action=>:download_validation,:id=>url.id if !url.errors_w3c.eql?("Please Try Again Later")%></td>
                       <td><%=link_to "Show Tidy",:action=>:download,:id=>url.id if !url.errors_w3c.eql?("Please Try Again Later")%></td>
                       <tr>
                   <%end%>             
