@@ -17,16 +17,18 @@ end
 def tidy_datas(i,response,file_original_name)
 	errors_warnings=header_manipulations(response)
 	body_content=response.body
+	time_variable=Time.now.strftime("%Y-%d-%m-%H:%M:%S")
 	#Used to create the complete validation data file
+	file_original_name=file_original_name.gsub("/","_")
 	path = "#{Rails.root}/public/validation_template/"
-	file_name = "#{file_original_name}_validate_#{Time.now.to_s}.html"
+	file_name = "#{file_original_name}_validate_#{time_variable}.html"
 	aFile = File.new(path + file_name, "w")
 	body_content = body_content.encode('utf-8', :invalid => :replace, :undef => :replace, :replace => '_')
 	aFile.write(body_content)
 	aFile.close
 	page = Nokogiri::HTML(open(path + file_name))  
 	#Used to create the Tidy data	file
-	file_name_tidy = "#{file_original_name}_#{Time.now.to_s}_tidy.html"
+	file_name_tidy = "#{file_original_name}_#{time_variable}_tidy.html"
 	bFile = File.new(path + file_name_tidy, "w")
 	bFile.write(page.css('div#tidy')[0])
 	bFile.close
