@@ -27,12 +27,20 @@ def tidy_datas(i,response,file_original_name)
 	aFile.write(body_content)
 	aFile.close
 	page = Nokogiri::HTML(open(path + file_name))  
+	page.xpath("//img").each do |img|
+	img.remove
+	end
 	#Used to create the Tidy data	file
 	file_name_tidy = "#{file_original_name}_#{time_variable}_tidy.html"
 	bFile = File.new(path + file_name_tidy, "w")
 	bFile.write(page.css('div#tidy')[0])
 	bFile.close
-	return file_name,file_name_tidy,errors_warnings
+	file_name_error = "#{file_original_name}_#{time_variable}_error.html"
+	errorfile = File.new(path + file_name_error, "w")
+	errorfile.write(page.css('ol#warnings')[0].to_s + page.css('div#result')[0].to_s)
+	errorfile.close
+	
+	return file_name_error,file_name_tidy,errors_warnings
 end
 
 #Manipulating the header to findout errors & warnings
