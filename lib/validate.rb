@@ -30,6 +30,9 @@ def tidy_datas(i,response,file_original_name)
 	page.xpath("//img").each do |img|
 	img.remove
 	end
+	page.css("p").each do |p|
+	p.remove if p["class"] == "backtop" 
+	end
 	#Used to create the Tidy data	file
 	file_name_tidy = "#{file_original_name}_#{time_variable}_tidy.html"
 	bFile = File.new(path + file_name_tidy, "w")
