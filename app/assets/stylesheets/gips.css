@@ -3,10 +3,11 @@
     height: 70px;
     width: 252px;
     position: absolute;
+    background-color: #EAEBEE;
 }
 .gips-body
 {
-    color: White;
+    color: #EAEBEE;
     font-weight: bold;
     font-family: Arial;
     font-size: 10px;
@@ -56,6 +57,7 @@
     border-style: solid;
     border-width: 6px;
     position: absolute;
+    background-color: #EAEBEE;
 }
 /*icon at the bottom */
 .gips-icon-bottom
