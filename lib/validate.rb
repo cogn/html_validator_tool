@@ -31,7 +31,7 @@ def tidy_datas(i,response,file_original_name)
 	img.remove
 	end
 	page.css("p").each do |p|
-	p.remove if p["class"] == "backtop" 
+	p.remove	if p["class"] == "backtop" || p["class"] == "helpwanted"
 	end
 	#Used to create the Tidy data	file
 	file_name_tidy = "#{file_original_name}_#{time_variable}_tidy.html"
