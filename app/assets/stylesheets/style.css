@@ -15,7 +15,7 @@ div#frontforms input { background-color: rgb(234, 235, 238); }
 input#uri, input#file, input#uploaded_file, input#keywords, input#short_desc, textarea { font-family: Monaco,"Courier New",Monospace; font-size: 0.9em; border-right: 1px solid rgb(187, 187, 187); border-left: 1px solid rgb(187, 187, 187); -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; border-image: none; border-width: 1px; border-style: solid; border-color: rgb(119, 119, 119) rgb(187, 187, 187) rgb(221, 221, 221);padding: 0.2em; max-width: 1000px; font-variant: normal; }
 
 
-input#uri, input#file, input#uploaded_file { width: 85%; margin: 0.3em 0px 0px 1em; }
+input#uri, input#file, input#uploaded_file { width: 65%; margin: 0.3em 0px 0px 1em; }
 input#file, input#uploaded_file { width: 30em; }
 
 a.submit { display: block; width: 10em; text-align: center; margin: 0px auto; background: url('button-left.png') no-repeat scroll left center transparent; text-decoration: none; }

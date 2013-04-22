@@ -8,8 +8,8 @@
                   <p>
                      <label title="Address of page to Validate" for="uri">Address:<font size="2" color="red">*</font></label>
                      <!--<input value="" name="uri" id="uri" size="45" type="text" style = "background: url('textbg.png') no-repeat scroll left top rgb(254, 254, 254);">-->
-			<%= text_field_tag 'uri','', :size=>"45", :style=>  "background: url('textbg.png') no-repeat scroll left top rgb(254, 254, 254);"%><br/>
-			<span class="note" style="padding-left:85px;">*Input url's separated by commas(,)</span>
+			<%= text_field_tag 'uri','', :size=>"45", :style=>  "background: url('textbg.png') no-repeat scroll left top rgb(254, 254, 254);"%> <%= image_tag("help.png",:id=>"help_url")%><br/>
+			<span class="note" style="padding-left:85px;"></span>
                      </br></br>
                      <input id="direct-st" name="st" value="1" type="checkbox"  checked="checked" disabled="true">
                      <label for="direct-st">Clean up Markup with HTML-Tidy</label>
@@ -24,3 +24,8 @@
             </fieldset>
          </div>
          <!-- fields -->
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#help_url').gips({ 'theme': 'blue', autoHide: true, text: "Input url's separated by commas(,)" });
+        });
+    </script>

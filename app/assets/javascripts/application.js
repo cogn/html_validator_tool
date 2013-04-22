@@ -7,6 +7,8 @@
 //= require jquery
 //= require jquery_ujs
 $(document).ready(function(){  
+$('#help_url').gips({ 'theme': 'blue', autoHide: true, text: "Input url's separated by commas(,)" });
+$('#help_file').gips({ 'theme': 'blue', autoHide: true, text: "To select multiple files, press and hold down CTRL, and then click each item. " });
  $("#validate_url").submit(function(e){
     value=$("#uri").val()
     if (value.length>0)
